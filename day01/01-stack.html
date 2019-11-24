@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    // 栈类
+    function Stack() {
+        // 栈中的属性
+        this.items = []
+
+        // 栈中的方法
+        //添加一个新的元素到栈顶位置
+        Stack.prototype.push = function (element) {
+            this.items.push(element)
+        }
+        // 移除栈顶的元素，同时返回被移除的元素
+        Stack.prototype.pop = function () {
+            return this.items.pop()
+        }
+        // 返回栈顶的元素，不对栈做任何修改(这个方法不会移除栈顶的元素，仅仅返回它)。
+        Stack.prototype.peek = function () {
+            return this.items[this.items.length - 1]
+        }
+        // 如果栈里面没有任何元素就返回true，否则返回false。
+        Stack.prototype.isEmpty = function () {
+            return this.items.length === 0
+        }
+        // 返回栈里的元素个数。这个方法和数组length属性很类似。
+        Stack.prototype.size = function () {
+            return this.items.length
+        }
+        // 将栈结构的内容以字符串形式返回。
+        Stack.prototype.toString = function () {
+            // 10 20 8 2
+            let resultString = ''
+            for (let i = 0; i < this.items.length; i++) {
+                resultString += this.items[i] + ' '
+            }
+            return resultString
+        }
+    }
+
+    // 栈的调用
+    // let s = new Stack()
+
+    // test
+    /*  s.push(20)
+        s.push(77)
+        // s.push(1)
+        alert(s)
+
+        s.pop()
+        s.pop()
+        alert(s)
+        alert(s.peek())
+        alert(s.isEmpty())
+        alert(s.size())*/
+
+    // 函数：十进制转成二进制
+    function dec2bin(decNumber) {
+        // 1.定义栈对象
+        let stack = new Stack()
+        // 2.循环操作
+        while (decNumber > 0) {
+            // 2.1 获取语速，并且放入栈中
+            stack.push(decNumber % 2)
+            // 2.2 获取整除后的结果，作为下一次运行的数字
+            decNumber = Math.floor(decNumber / 2)
+        }
+        // 3.从栈中取出0和1
+        let  binaryString = ''
+        while (!stack.isEmpty()){
+        binaryString += stack.pop()
+        }
+        return binaryString
+    }
+
+    // 测试十进制转换二进制
+    alert(dec2bin(100))
+</script>
+</html>
