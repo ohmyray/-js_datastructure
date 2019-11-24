@@ -10,10 +10,72 @@
 <script>
     // 封装优先级队列
     function PriorityQueue() {
+        // 在PriorityQueue 内部重新创建了一个类，可以理解为Java内部类
+        function QueueElement(element, priority) {
+            this.element = element
+            this.priority = priority
+        }
 
+        // 封装属性
+        this.items = []
+
+        // 实现插入方法
+        PriorityQueue.prototype.enqueue = function (element, priority) {
+            // 1.创建QueueElement对象
+            let queueElement = new QueueElement(element, priority)
+
+            // 2.判断队列是否为空
+            if (this.items.length === 0) {
+                this.items.push(queueElement)
+            } else {
+                let added = false
+                for (let i = 0; i < this.items.length; i++) {
+                    if (queueElement.priority < this.items[i].priority) {
+                        this.items.splice(i, 0, queueElement)
+                        added = true
+                        break
+                    }
+                }
+                if (!added) {
+                    this.items.push(queueElement)
+                }
+
+            }
+        }
+
+        // 移除队列的第一（即排在队列最前面的）项，并返回被移除的元素。
+        PriorityQueue.prototype.dePriorityQueue = function () {
+            return this.items.shift()
+        }
+        // 返回队列中第一个元素 --> 最先被添加的，也将是最先被移除的元素。队列不作任何变动（不移除元素，只返回元素信息-->与Stack类的peek方法非常类似）。
+        PriorityQueue.prototype.front = function () {
+            return this.items[0]
+        }
+        // 如果队列中不包含任何元素，返回true，否则返回false。
+        PriorityQueue.prototype.isEmpty = function () {
+            return this.items.length === 0
+        }
+        // 返回队列包含的元素个数，与数组的length属性类似。
+        PriorityQueue.prototype.size = function () {
+            return this.items.length
+        }
+        // 将队列中的内容，转成字符串形式
+        PriorityQueue.prototype.toString = function () {
+            let resultString = ''
+            for (let i = 0; i < this.items.length; i++) {
+                resultString += this.items[i].element + '-' + this.items[i].priority + ' '
+            }
+            return resultString
+        }
     }
 
     // test
-    let pq = new PriorityQueue();
+    let pq = new PriorityQueue()
+
+    pq.enqueue('a',10)
+    pq.enqueue('b',1010)
+    pq.enqueue('c',101)
+    pq.enqueue('d',1000)
+    alert(pq.toString())
 </script>
 </html>

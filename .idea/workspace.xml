@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="abd2269b-8ad5-437a-8df3-b5ba1231194f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/day02/01-优先级队列.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/day02/01-优先级队列.html" beforeDir="false" afterPath="$PROJECT_DIR$/day02/01-优先级队列.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +55,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.02-queue.html">
+  <component name="RunManager" selected="JavaScript Debug.01-优先级队列.html">
+    <configuration name="01-优先级队列.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/demo-01/day02/01-优先级队列.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="01-stack.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/demo-01/day01/01-stack.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -64,6 +67,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.01-优先级队列.html" />
         <item itemvalue="JavaScript Debug.02-queue.html" />
         <item itemvalue="JavaScript Debug.01-stack.html" />
       </list>
@@ -82,7 +86,7 @@
       <workItem from="1574339374605" duration="6124000" />
       <workItem from="1574382099689" duration="23000" />
       <workItem from="1574517350371" duration="7000" />
-      <workItem from="1574594184786" duration="4303000" />
+      <workItem from="1574594184786" duration="6422000" />
     </task>
     <servers />
   </component>
